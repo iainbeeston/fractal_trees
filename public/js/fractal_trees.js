@@ -1,6 +1,6 @@
 (function() {
   var treeBrownMean = {r: 71.0, g: 37.0, b: 24.0};
-  var treeBrownStDev = {r: 16.0, g: 4.0, b: 8.0};
+  var treeBrownStDev = {r: 12.0, g: 4.0, b: 8.0};
 
   var branchColour = function(depth) {
     var rgb = ['r', 'g', 'b'].map(function(colour) {
