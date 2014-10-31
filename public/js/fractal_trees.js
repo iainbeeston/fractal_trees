@@ -21,6 +21,10 @@
     return chance.normal({mean: Math.PI / 9.0, dev: Math.PI / 18.0});
   }
 
+  var treeDepth = function() {
+    return Math.floor(chance.normal({mean: 9.0, dev: 1.0}));
+  }
+
   var drawLine = function(x1, y1, x2, y2, styles){
     Utils.extend(ctx, styles);
     ctx.beginPath();
@@ -50,7 +54,7 @@
   var drawForest = function(treeCount) {
     for(var i = 0; i < treeCount; i++) {
       var origin = treeOrigin();
-      drawTree(origin.x, origin.y, -Math.PI/2, 9, {strokeStyle: branchColour(9)});
+      drawTree(origin.x, origin.y, -Math.PI/2, treeDepth(), {strokeStyle: branchColour()});
     }
   }
 
