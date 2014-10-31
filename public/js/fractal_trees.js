@@ -46,7 +46,7 @@
   }
 
   var leavesPerBranch = function() {
-    return chance.normal({mean: 4.0, dev: 2.0});
+    return chance.normal({mean: 6.0, dev: 2.0});
   }
 
   var leafLength = function() {
