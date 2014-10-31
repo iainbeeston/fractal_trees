@@ -1,5 +1,5 @@
 (function() {
-  var treeBrownMean = {r: 71.0, g: 37.0, b: 24.0};
+  var treeBrownMean = {r: 64.0, g: 40.0, b: 24.0};
   var treeBrownStDev = {r: 12.0, g: 4.0, b: 8.0};
 
   var leafGreenMean = {r: 96.0, g: 112.0, b: 56.0};
