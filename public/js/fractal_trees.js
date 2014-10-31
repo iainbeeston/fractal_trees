@@ -132,10 +132,18 @@
     }
   }
 
+  var randomBackground = function() {
+    var backgroundImages = ["images/dc_rain_maker.jpg", "images/dc_rain_maker.jpg", "images/summit_country_ski.jpg"];
+    return backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+  }
+
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   ctx.canvas.width  = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
+
+  canvas.style.backgroundImage = "url('" + randomBackground() + "')";
+  canvas.style.backgroundSize = 'cover';
 
   canvas.addEventListener('click', function(e) {
     window.setTimeout(function() {
