@@ -29,7 +29,7 @@
   }
 
   var branchGrowTime = function(depth) {
-    return chance.normal({mean: 1000.0, dev: 100.0});
+    return Math.max(chance.normal({mean: 1000.0, dev: 500.0}), 0);
   }
 
   var treeDepth = function() {
