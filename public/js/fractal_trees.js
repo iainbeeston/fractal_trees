@@ -26,7 +26,7 @@
   }
 
   ctx.beginPath();
-  drawTree(300, 500, -Math.PI/2, 9, {strokeStyle: '#aa0000', lineWidth: 1});
+  drawTree(canvas.clientWidth/2, canvas.clientHeight, -Math.PI/2, 9, {strokeStyle: '#aa0000', lineWidth: 1});
   ctx.closePath();
   ctx.stroke();
 })();
