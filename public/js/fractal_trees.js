@@ -15,7 +15,7 @@
   }
 
   var branchLength = function(depth) {
-    return chance.normal({mean: 8.0, dev: Math.sqrt(depth)});
+    return chance.normal({mean: 8.0, dev: 3.0});
   }
 
   var branchAngle = function(depth) {
