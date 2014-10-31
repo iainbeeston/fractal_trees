@@ -2,7 +2,8 @@
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
 
-  var deg_to_rad = Math.PI / 180.0;
+  var angleMean = Math.PI / 9;
+  var angleStDev = Math.PI / 18;
 
   function drawLine(x1, y1, x2, y2, styles){
     style = styles || {};
@@ -15,17 +16,17 @@
     ctx.lineTo(x2, y2);
   }
 
-  function drawTree(x1, y1, angle, depth, styles){
+  function drawTree(x1, y1, angle1, depth, styles){
     if (depth === 0) return;
-    var x2 = x1 + (Math.cos(angle * deg_to_rad) * depth * 10.0);
-    var y2 = y1 + (Math.sin(angle * deg_to_rad) * depth * 10.0);
+    var x2 = x1 + (Math.cos(angle1) * depth * 10.0);
+    var y2 = y1 + (Math.sin(angle1) * depth * 10.0);
     drawLine(x1, y1, x2, y2, styles);
-    drawTree(x2, y2, angle - 20, depth - 1, styles);
-    drawTree(x2, y2, angle + 20, depth - 1, styles);
+    drawTree(x2, y2, angle1 - chance.normal({mean: angleMean, dev: angleStDev}), depth - 1, styles);
+    drawTree(x2, y2, angle1 + chance.normal({mean: angleMean, dev: angleStDev}), depth - 1, styles);
   }
 
   ctx.beginPath();
-  drawTree(300, 500, -90, 9, {strokeStyle: '#aa0000', lineWidth: 1});
+  drawTree(300, 500, -Math.PI/2, 9, {strokeStyle: '#aa0000', lineWidth: 1});
   ctx.closePath();
   ctx.stroke();
 })();
