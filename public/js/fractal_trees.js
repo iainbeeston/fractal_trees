@@ -1,11 +1,9 @@
 (function() {
-  var darkBrown = {r: 43, g: 21, b: 14};
-  var lightBrown = {r: 99, g: 53, b: 34};
-  var meanBrown = {r: (lightBrown.r + darkBrown.r)/2.0, g: (lightBrown.g + darkBrown.g)/2.0, b: (lightBrown.b + darkBrown.b)/2.0}
+  var treeBrown = {r: 71.0, g: 37.0, b: 24.0}
 
   var branchColour = function(depth) {
     var rgb = ['r', 'g', 'b'].map(function(colour) {
-      return Math.floor(chance.normal({mean: meanBrown[colour], dev: 10.0}));
+      return Math.floor(chance.normal({mean: treeBrown[colour], dev: 10.0}));
     })
     return 'rgb(' + rgb.join(', ') + ')'
   }
