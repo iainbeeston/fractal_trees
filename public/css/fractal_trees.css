@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  -webkit-tap-highlight-color: transparent;
+}
+.notice {
+  display: block;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  font-size: 32px;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: rgba(3, 0, 128, 1.0);
+  text-align: center;
+}
+.pulsating {
+  -webkit-animation-name: pulsate;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: pulsate;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  animation-name: pulsate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+@-moz-keyframes pulsate {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+@keyframes pulsate {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+.hidden {
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 1s;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeout {
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeout {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  to {
+    opacity: 0;
+  }
+}
