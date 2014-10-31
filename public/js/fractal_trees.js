@@ -1,9 +1,10 @@
 (function() {
-  var treeBrown = {r: 71.0, g: 37.0, b: 24.0}
+  var treeBrownMean = {r: 71.0, g: 37.0, b: 24.0};
+  var treeBrownStDev = {r: 16.0, g: 4.0, b: 8.0};
 
   var branchColour = function(depth) {
     var rgb = ['r', 'g', 'b'].map(function(colour) {
-      return Math.floor(chance.normal({mean: treeBrown[colour], dev: 10.0}));
+      return Math.floor(chance.normal({mean: treeBrownMean[colour], dev: treeBrownStDev[colour]}));
     })
     return 'rgb(' + rgb.join(', ') + ')'
   }
