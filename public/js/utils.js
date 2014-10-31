@@ -2,7 +2,7 @@
   window.Utils = {
     extend: function(a, b) {
       for (var bx in b) {
-        if (b.hasOwnProperty(bx)) {
+        if (b.hasOwnProperty(bx) && a[bx] !== b[bx]) {
           a[bx] = b[bx];
         }
       }
