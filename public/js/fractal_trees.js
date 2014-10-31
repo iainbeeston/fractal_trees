@@ -39,7 +39,20 @@
     drawTree(x2, y2, angle1 + branchAngle(depth), depth - 1, styles);
   }
 
+  var treeOrigin = function() {
+    var pos = {}
+    pos.x = Math.floor((canvas.clientWidth * 0.1) + (0.8 * Math.random() * canvas.clientWidth));
+    pos.y = Math.floor(canvas.clientHeight - (0.1 * Math.random() * canvas.clientHeight));
+    return pos;
+  }
+
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
-  drawTree(canvas.clientWidth/2, canvas.clientHeight, -Math.PI/2, 9, {strokeStyle: branchColour(9)});
+  ctx.canvas.width  = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
+
+  for(var i = 0; i < 10; i++) {
+    var origin = treeOrigin();
+    drawTree(origin.x, origin.y, -Math.PI/2, 9, {strokeStyle: branchColour(9)});
+  }
 })();
