@@ -48,15 +48,17 @@
 
     var cosAngle = Math.cos(angle1)
     var sinAngle = Math.sin(angle1)
+    var x2 = x1;
+    var y2 = y2;
 
     var step = function(timestamp) {
       if (startTime === null) startTime = timestamp;
       var currentTime = (timestamp - startTime);
       var currentLength = length * (currentTime / growTime);
-      var x2 = x1 + (cosAngle * currentLength);
-      var y2 = y1 + (sinAngle * currentLength);
 
       if (currentLength < length) {
+        x2 = x1 + (cosAngle * currentLength);
+        y2 = y1 + (sinAngle * currentLength);
         drawBranch(x1, y1, x2, y2, styles);
         window.requestAnimationFrame(step);
       } else {
