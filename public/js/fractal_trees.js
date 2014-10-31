@@ -155,7 +155,13 @@
   canvas.style.backgroundPosition = 'top center';
   canvas.style.backgroundImage = "url('" + randomBackground() + "')";
 
+  var notice = document.createElement('span');
+  notice.classList.add('notice');
+  notice.textContent = "click to plant a tree...";
+  canvas.parentElement.appendChild(notice);
+
   canvas.addEventListener('click', function(e) {
+    notice.classList.add('hidden');
     window.setTimeout(function() {
       drawTree(e.clientX, e.clientY, -Math.PI/2, treeDepth(), {strokeStyle: branchColour()});
     }, 200);
