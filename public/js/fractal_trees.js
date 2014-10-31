@@ -54,7 +54,7 @@
   }
 
   var leafAngle = function() {
-    return chance.normal({mean: 0.0, dev: (2.0 * Math.PI / 3.0)});
+    return chance.normal({mean: 0.0, dev: Math.PI / 3.0});
   }
 
   var leafColour = function(depth) {
