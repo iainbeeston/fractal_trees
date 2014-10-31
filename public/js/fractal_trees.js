@@ -150,8 +150,9 @@
   ctx.canvas.width  = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 
-  canvas.style.backgroundImage = "url('" + randomBackground() + "')";
   canvas.style.backgroundSize = 'cover';
+  canvas.style.backgroundPosition = 'top center';
+  canvas.style.backgroundImage = "url('" + randomBackground() + "')";
 
   canvas.addEventListener('click', function(e) {
     window.setTimeout(function() {
