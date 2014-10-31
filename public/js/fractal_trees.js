@@ -2,7 +2,7 @@
   var treeBrownMean = {r: 64.0, g: 40.0, b: 24.0, a: 1.0};
   var treeBrownStDev = {r: 12.0, g: 4.0, b: 8.0, a: 0.0};
 
-  var leafGreenMean = {r: 80.0, g: 112.0, b: 48.0, a: 0.6};
+  var leafGreenMean = {r: 80.0, g: 96.0, b: 48.0, a: 0.6};
   var leafGreenStDev = {r: 4.0, g: 12.0, b: 4.0, a: 0.0};
 
   var randomColour = function(meanColour, stDevColour) {
