@@ -57,8 +57,12 @@
     return chance.normal({mean: 0.0, dev: Math.PI / 3.0});
   }
 
-  var leafColour = function(depth) {
+  var leafColour = function() {
     return randomColour(leafGreenMean, leafGreenStDev);
+  }
+
+  var leafGrowTime = function() {
+    return Math.random() * 1500.0;
   }
 
   var drawLeaf = function(x1, y1, x2, y2, x3, y3, x4, y4, styles) {
@@ -93,7 +97,9 @@
         var x4 = x1 + (Math.cos(angle4) * length / 3.0);
         var y4 = y1 + (Math.sin(angle4) * length / 3.0);
 
-        drawLeaf(x1, y1, x2, y2, x3, y3, x4, y4, styles)
+        setTimeout(function() {
+          drawLeaf(x1, y1, x2, y2, x3, y3, x4, y4, styles)
+        }, leafGrowTime());
       }
     } else {
       styles = Utils.merge(styles, {lineWidth: branchThickness(depth)});
