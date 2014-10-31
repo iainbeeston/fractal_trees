@@ -47,13 +47,22 @@
     return pos;
   }
 
+  var drawForest = function(treeCount) {
+    for(var i = 0; i < treeCount; i++) {
+      var origin = treeOrigin();
+      drawTree(origin.x, origin.y, -Math.PI/2, 9, {strokeStyle: branchColour(9)});
+    }
+  }
+
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   ctx.canvas.width  = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
+  drawForest(10);
 
-  for(var i = 0; i < 10; i++) {
-    var origin = treeOrigin();
-    drawTree(origin.x, origin.y, -Math.PI/2, 9, {strokeStyle: branchColour(9)});
-  }
+  canvas.addEventListener('click', function() {
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    drawForest(10);
+  });
+
 })();
