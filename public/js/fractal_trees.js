@@ -36,9 +36,10 @@
 
   var drawTree = function(x1, y1, angle1, depth, styles){
     if (depth === 0) return;
-    var x2 = x1 + (Math.cos(angle1) * branchLength(depth));
-    var y2 = y1 + (Math.sin(angle1) * branchLength(depth));
     styles = Utils.merge(styles, {lineWidth: branchThickness(depth)});
+    var length = branchLength(depth);
+    var x2 = x1 + (Math.cos(angle1) * length);
+    var y2 = y1 + (Math.sin(angle1) * length);
     drawBranch(x1, y1, x2, y2, styles);
     drawTree(x2, y2, angle1 - branchAngle(depth), depth - 1, styles);
     drawTree(x2, y2, angle1 + branchAngle(depth), depth - 1, styles);
