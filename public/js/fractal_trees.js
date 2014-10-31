@@ -134,7 +134,7 @@
   }
 
   var drawTree = function(x1, y1, angle1, depth, styles){
-    if (depth < 5) {
+    if (depth < 6) {
       drawLeaves(x1, y1, angle1, depth, styles)
     }
     if (depth > 0) {
