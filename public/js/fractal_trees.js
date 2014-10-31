@@ -42,7 +42,7 @@
 
   var treeOrigin = function() {
     var pos = {}
-    pos.x = Math.floor((canvas.clientWidth * 0.1) + (0.8 * Math.random() * canvas.clientWidth));
+    pos.x = Math.floor((canvas.clientWidth * 0.05) + (0.9 * Math.random() * canvas.clientWidth));
     pos.y = Math.floor(canvas.clientHeight - (0.1 * Math.random() * canvas.clientHeight));
     return pos;
   }
