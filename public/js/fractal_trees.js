@@ -62,7 +62,7 @@
   }
 
   var leafGrowTime = function() {
-    return Math.random() * 1500.0;
+    return Math.random() * 3000.0;
   }
 
   var drawLeaf = function(x1, y1, x2, y2, x3, y3, x4, y4, styles) {
