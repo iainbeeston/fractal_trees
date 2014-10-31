@@ -36,13 +36,32 @@
 
   var drawTree = function(x1, y1, angle1, depth, styles){
     if (depth === 0) return;
+
     styles = Utils.merge(styles, {lineWidth: branchThickness(depth)});
     var length = branchLength(depth);
-    var x2 = x1 + (Math.cos(angle1) * length);
-    var y2 = y1 + (Math.sin(angle1) * length);
-    drawBranch(x1, y1, x2, y2, styles);
-    drawTree(x2, y2, angle1 - branchAngle(depth), depth - 1, styles);
-    drawTree(x2, y2, angle1 + branchAngle(depth), depth - 1, styles);
+    var startTime = null;
+    var growTime = 1000.0;
+
+    var cosAngle = Math.cos(angle1)
+    var sinAngle = Math.sin(angle1)
+
+    var step = function(timestamp) {
+      if (startTime === null) startTime = timestamp;
+      var currentTime = (timestamp - startTime);
+      var currentLength = length * (currentTime / growTime);
+      var x2 = x1 + (cosAngle * currentLength);
+      var y2 = y1 + (sinAngle * currentLength);
+
+      if (currentLength < length) {
+        drawBranch(x1, y1, x2, y2, styles);
+        window.requestAnimationFrame(step);
+      } else {
+        drawTree(x2, y2, angle1 - branchAngle(depth), depth - 1, styles);
+        drawTree(x2, y2, angle1 + branchAngle(depth), depth - 1, styles);
+      }
+    }
+
+    window.requestAnimationFrame(step);
   }
 
   var canvas = document.getElementById('canvas');
