@@ -51,7 +51,7 @@
   }
 
   var leafLength = function() {
-    return chance.normal({mean: 15.0, dev: 8.0});
+    return Math.max(chance.normal({mean: 15.0, dev: 12.0}), 0);
   }
 
   var leafAngle = function() {
