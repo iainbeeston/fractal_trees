@@ -165,9 +165,11 @@
   canvas.addEventListener('click', function(e) {
     notice.classList.remove('pulsating');
     notice.classList.add('hidden');
-    window.setTimeout(function() {
-      drawTree(e.clientX, e.clientY, -Math.PI/2, treeDepth(), {strokeStyle: branchColour()});
-    }, 200);
+    if(e.clientY > (window.innerHeight / 3.0)) {
+      window.setTimeout(function() {
+        drawTree(e.clientX, e.clientY, -Math.PI/2, treeDepth(), {strokeStyle: branchColour()});
+      }, 200);
+    }
     return true;
   });
 
