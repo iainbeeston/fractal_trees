@@ -143,7 +143,7 @@
   }
 
   var randomBackground = function() {
-    var backgroundImages = ["images/dc_rain_maker.jpg", "images/dc_rain_maker.jpg", "images/summit_country_ski.jpg"];
+    var backgroundImages = ["images/travel_morocco.jpg", "images/dc_rain_maker.jpg", "images/summit_country_ski.jpg"];
     return backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
   }
 
