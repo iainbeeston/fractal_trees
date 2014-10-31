@@ -74,7 +74,9 @@
   ctx.canvas.height = window.innerHeight;
 
   canvas.addEventListener('click', function(e) {
-    drawTree(e.clientX, e.clientY, -Math.PI/2, treeDepth(), {strokeStyle: branchColour()});
+    window.setTimeout(function() {
+      drawTree(e.clientX, e.clientY, -Math.PI/2, treeDepth(), {strokeStyle: branchColour()});
+    }, 200);
     return true;
   });
 
