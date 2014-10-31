@@ -44,29 +44,14 @@
     drawTree(x2, y2, angle1 + branchAngle(depth), depth - 1, styles);
   }
 
-  var treeOrigin = function() {
-    var pos = {}
-    pos.x = Math.floor((canvas.clientWidth * 0.05) + (0.9 * Math.random() * canvas.clientWidth));
-    pos.y = Math.floor(canvas.clientHeight - (0.1 * Math.random() * canvas.clientHeight));
-    return pos;
-  }
-
-  var drawForest = function(treeCount) {
-    for(var i = 0; i < treeCount; i++) {
-      var origin = treeOrigin();
-      drawTree(origin.x, origin.y, -Math.PI/2, treeDepth(), {strokeStyle: branchColour()});
-    }
-  }
-
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   ctx.canvas.width  = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
-  drawForest(10);
 
-  canvas.addEventListener('click', function() {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    drawForest(10);
+  canvas.addEventListener('click', function(e) {
+    drawTree(e.clientX, e.clientY, -Math.PI/2, treeDepth(), {strokeStyle: branchColour()});
+    return true;
   });
 
 })();
