@@ -21,6 +21,10 @@
     return chance.normal({mean: Math.PI / 9.0, dev: Math.PI / 18.0});
   }
 
+  var branchGrowTime = function(depth) {
+    return chance.normal({mean: 1000.0, dev: 100.0});
+  }
+
   var treeDepth = function() {
     return Math.floor(chance.normal({mean: 9.0, dev: 1.0}));
   }
@@ -40,7 +44,7 @@
     styles = Utils.merge(styles, {lineWidth: branchThickness(depth)});
     var length = branchLength(depth);
     var startTime = null;
-    var growTime = 1000.0;
+    var growTime = branchGrowTime(depth);
 
     var cosAngle = Math.cos(angle1)
     var sinAngle = Math.sin(angle1)
